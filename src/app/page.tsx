@@ -4,6 +4,7 @@ import { api, HydrateClient } from "@/trpc/server";
 import Navbar from "@/section/Navbar";
 import NewsMarquee from "@/section/NewsMarquee";
 import { BlogGrid } from "@/components/BlogGrid";
+import Footer from "@/section/Footer";
 
 export default async function Home() {
   const session = await auth();
@@ -25,7 +26,7 @@ export default async function Home() {
           alt='Featured post'
           className="w-full h-full object-cover"
         />
-        <div className="absolute bottom-0 left-0 z-20 p-8 text-white space-y-4 max-w-4xl">
+        <div className="absolute bottom-0 left-0 z-10 p-8 text-white space-y-4 max-w-4xl">
           <div className="flex gap-4 text-sm font-medium">
             <span className="bg-black/80 px-3 py-1 ">POLITICS</span>
             <span className="bg-black/80 px-3 py-1 ">LAB</span>
@@ -50,8 +51,44 @@ export default async function Home() {
             </span>
           </div>
           <BlogGrid />
+
+          <div className="border-t-2 border-black">
+            <span className="px-4 bg-black text-white py-1.5 font-medium text-sm">
+              HOW TO USE...
+            </span>
+          </div>
+          <BlogGrid />
+
+          <div className="border-t-2 border-black">
+            <span className="px-4 bg-black text-white py-1.5 font-medium text-sm">
+              TUTORIALS
+            </span>
+          </div>
+          <BlogGrid />
+
+          <div className="border-t-2 border-black">
+            <span className="px-4 bg-black text-white py-1.5 font-medium text-sm">
+              TECH NEWS
+            </span>
+          </div>
+          <BlogGrid />
+
+          <div className="border-t-2 border-black">
+            <span className="px-4 bg-black text-white py-1.5 font-medium text-sm">
+              TOOLS & RESOURCES
+            </span>
+          </div>
+          <BlogGrid />
+
+          <div className="border-t-2 border-black">
+            <span className="px-4 bg-black text-white py-1.5 font-medium text-sm">
+              INNOVATIONS
+            </span>
+          </div>
+          <BlogGrid />
         </div>
       </main>
+      <Footer />
     </HydrateClient>
   );
 }
